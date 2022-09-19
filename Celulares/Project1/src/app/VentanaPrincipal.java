@@ -22,6 +22,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu2.setEnabled(false);
         jMenu3.setEnabled(false);
         jMenu4.setEnabled(false);
+        jMenu5.setEnabled(false);
         jTextField1.setEnabled(false);
         jTextField2.setEnabled(false);
         jTextField3.setEnabled(false);
@@ -108,6 +109,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem16 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Programa de Federico");
@@ -484,6 +487,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu5.setText("Administrador");
+
+        jMenuItem18.setText("Reinicio de la base de datos");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem18);
+
+        jMenuBar1.add(jMenu5);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -817,6 +832,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         sestado.setLocationRelativeTo(null);
         sestado.setVisible(true);
     }//GEN-LAST:event_jMenuItem16ActionPerformed
+    private ReinicioBD rbase = new ReinicioBD(this,true);
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        // TODO add your handling code here:
+        rbase.setDefaultCloseOperation(rbase.HIDE_ON_CLOSE);
+        rbase.setModal(true);
+        rbase.setLocationRelativeTo(null);
+        rbase.setVisible(true);
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -877,6 +900,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenu jMenu2;
     public static javax.swing.JMenu jMenu3;
     public static javax.swing.JMenu jMenu4;
+    public static javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -887,6 +911,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

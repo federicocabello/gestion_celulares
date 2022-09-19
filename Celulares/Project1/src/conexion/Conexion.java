@@ -82,6 +82,7 @@ public class Conexion {
             String uu=BaseDatos.jTextField1.getText();
             if(uu.equals("root")){
                 ultimoMensajeMySQL="Conexión realizada! Bienvenid@.\nHa ingresado al sistema como ADMINISTRADOR ("+uu+").";
+                VentanaPrincipal.jMenu5.setEnabled(true);
             }else{
                 ultimoMensajeMySQL="Conexión realizada! Bienvenid@.\nHas ingresado al sistema como USUARIO ("+uu+").";
             } 
