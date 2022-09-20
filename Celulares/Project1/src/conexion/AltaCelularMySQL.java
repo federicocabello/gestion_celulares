@@ -3,6 +3,7 @@ package conexion;
 
 import java.awt.Panel;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -33,9 +34,46 @@ public class AltaCelularMySQL {
         try {
         Statement st = Conexion.getConexion().createStatement();
         st.executeUpdate(sql);
+        
+        ResultSet registro = st.executeQuery("SELECT celulares.cliente.email_cliente FROM celulares.cliente WHERE dni="+dni+";");
+            if(registro.next()){
+                Properties propiedad = new Properties();
+                propiedad.setProperty("mail.smtp.host", "smtp.gmail.com");
+                propiedad.setProperty("mail.smtp.starttls.enable", "true");
+                propiedad.setProperty("mail.smtp.port", "587");
+                
+                Session sesion = Session.getDefaultInstance(propiedad);
+                    
+                String correoEnvia = "fede.cabello.98@gmail.com";
+                String contrasena = "ulkliyonrdudvpga";
+                String receptor = registro.getString(1);
+                String asunto = "INGRESO DE UN DISPOSITIVO AL SISTEMA.";
+                String mensaje = "prueba 1";
+                    
+                    MimeMessage mail = new MimeMessage(sesion);
+                    try {
+                        mail.setFrom(new InternetAddress (correoEnvia));
+                        mail.addRecipient(Message.RecipientType.TO, new InternetAddress (receptor));
+                        mail.setSubject(asunto);
+                        mail.setText(mensaje);
+                        
+                        Transport transportar = sesion.getTransport("smtp");
+                        transportar.connect(correoEnvia,contrasena);
+                        transportar.sendMessage(mail, mail.getRecipients(Message.RecipientType.TO));          
+                        transportar.close();
+                        
+                        JOptionPane.showMessageDialog(null, "Listo, revise su correo");
+                        
+                        
+                    } catch (AddressException ex) {
+                        Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (MessagingException ex) {
+                        Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+            }
         ultimoMensajeMySQL="Registro guardado.\nSe agregó con éxito un dispositivo al cliente DNI: "+dni+".";
            
-        Properties propiedad = new Properties();
+        /*Properties propiedad = new Properties();
         propiedad.setProperty("mail.smtp.host", "smtp.gmail.com");
         propiedad.setProperty("mail.smtp.starttls.enable", "true");
         propiedad.setProperty("mail.smtp.port", "587");
@@ -44,7 +82,7 @@ public class AltaCelularMySQL {
             
         String correoEnvia = "fede.cabello.98@gmail.com";
         String contrasena = "ulkliyonrdudvpga";
-        String receptor = "fede.cabello@hotmail.com";
+        //String receptor = registro.getString(0);
         String asunto = "INGRESO DE UN DISPOSITIVO AL SISTEMA.";
         String mensaje = "prueba 1";
             
@@ -68,7 +106,7 @@ public class AltaCelularMySQL {
             } catch (MessagingException ex) {
                 Logger.getLogger(Panel.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+            */
         } catch (SQLException e) {
         ultimoMensajeMySQL="Error: " + e.getMessage();
         }
