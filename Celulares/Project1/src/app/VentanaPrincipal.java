@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import conexion.AltaCelularMySQL;
 
 import java.util.ArrayList;
+import java.util.Properties;
 
 
 /**
@@ -725,6 +726,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         int estado = this.jComboBox2.getSelectedIndex()+1;
         String msg = acelular.altaCelular(marca.toUpperCase(), modelo.toUpperCase(), problema.toUpperCase(), monto, dia, mes, ano, dni, tecnico, estado);
         this.jTextArea1.setText(msg);
+        
+        //Properties propiedad = new Properties();
+        
         
         jButton4.requestFocus();
     }//GEN-LAST:event_jButton3ActionPerformed
