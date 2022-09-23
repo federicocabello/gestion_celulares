@@ -76,7 +76,7 @@ public class Conexion {
             VentanaPrincipal.jComboBox2.removeAllItems();
             ArrayList<String> lista2 = new ArrayList<String>();
             lista2 = conexion_consulta.llenar_combo2();
-            for(int i = 1; i<lista2.size();i++){
+            for(int i = 0; i<lista2.size();i++){
                 VentanaPrincipal.jComboBox2.addItem(lista2.get(i));
             }
             String uu=BaseDatos.jTextField1.getText();

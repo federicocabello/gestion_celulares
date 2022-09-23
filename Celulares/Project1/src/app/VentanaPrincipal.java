@@ -114,7 +114,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Programa de Federico");
+        setTitle("Programa de Federico - Gestión de dispositivos");
         setMinimumSize(new java.awt.Dimension(660, 520));
         setPreferredSize(new java.awt.Dimension(660, 500));
         setResizable(false);
@@ -336,7 +336,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 300, -1));
 
-        jMenu1.setText("Gestión de clientes");
+        jMenu1.setText("Clientes");
 
         jMenuItem1.setText("Agregar");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -372,7 +372,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Gestión de celulares");
+        jMenu2.setText("Dispositivos");
 
         jMenuItem9.setText("Actualizar estado");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
@@ -416,7 +416,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Gestión de técnicos");
+        jMenu3.setText("Técnicos");
 
         jMenuItem12.setText("Agregar");
         jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
@@ -452,7 +452,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("Estados del dispositivo");
+        jMenu4.setText("Estados");
 
         jMenuItem5.setText("Agregar");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -582,7 +582,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jComboBox2.removeAllItems();
         ArrayList<String> lista2 = new ArrayList<String>();
         lista2 = conexion_consulta.llenar_combo2();
-        for(int i = 1; i<lista2.size();i++){
+        for(int i = 0; i<lista2.size();i++){
             jComboBox2.addItem(lista2.get(i));
         }
       

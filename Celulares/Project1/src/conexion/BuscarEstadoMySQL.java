@@ -14,7 +14,7 @@ public class BuscarEstadoMySQL {
         public String buscarEstado(String asterisco) {
         Statement st = null;
         ResultSet conjuntoResultados = null;
-        String SQL = "SELECT "+asterisco+" FROM estado";
+        String SQL = "SELECT "+asterisco+" FROM estado ORDER BY idestado ASC";
         try {
         st = Conexion.getConexion().createStatement();
         conjuntoResultados = st.executeQuery(SQL);

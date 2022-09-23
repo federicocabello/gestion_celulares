@@ -149,7 +149,7 @@ public class ModificarEstadoCelular extends javax.swing.JDialog {
         jComboBox1.removeAllItems();
         ArrayList<String> lista2 = new ArrayList<String>();
         lista2 = conexion_consulta.llenar_combo2();
-        for(int i = 1; i<lista2.size();i++){
+        for(int i = 0; i<lista2.size();i++){
             jComboBox1.addItem(lista2.get(i));
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -182,7 +182,7 @@ public class ModificarEstadoCelular extends javax.swing.JDialog {
     jComboBox1.removeAllItems();
     ArrayList<String> lista2 = new ArrayList<String>();
     lista2 = conexion_consulta.llenar_combo2();
-    for(int i = 1; i<lista2.size();i++){
+    for(int i = 0; i<lista2.size();i++){
         jComboBox1.addItem(lista2.get(i));
     }
     jTextField1.requestFocus();        // TODO add your handling code here:

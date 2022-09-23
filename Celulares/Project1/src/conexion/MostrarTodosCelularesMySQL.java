@@ -15,7 +15,7 @@ public class MostrarTodosCelularesMySQL {
         Statement st = null;
         ResultSet conjuntoResultados = null;
         //String SQL = "SELECT "+asterisco+" FROM celulares";
-        String SQL = "SELECT celulares.registro AS REGG,celulares.marca,celulares.modelo,celulares.problema,celulares.fechaingreso,celulares.dni_cliente,cliente.apellido_cliente,celulares.idtecnico,tecnico.apellido_tecnico,estado.descripcion,celulares.monto,celulares.fechaentrega FROM celulares JOIN cliente ON celulares.dni_cliente=cliente.dni JOIN estado ON celulares.estado=estado.idestado JOIN tecnico ON celulares.idtecnico=tecnico.idtecnico;";
+        String SQL = "SELECT celulares.registro,celulares.marca,celulares.modelo,celulares.problema,celulares.fechaingreso,celulares.dni_cliente,cliente.apellido_cliente,celulares.idtecnico,tecnico.apellido_tecnico,estado.descripcion,celulares.monto,celulares.fechaentrega FROM celulares JOIN cliente ON celulares.dni_cliente=cliente.dni JOIN estado ON celulares.estado=estado.idestado JOIN tecnico ON celulares.idtecnico=tecnico.idtecnico ORDER BY registro ASC;";
         try {
         st = Conexion.getConexion().createStatement();
         //String SQL = "SELECT celulares.registro AS REGG,celulares.marca,celulares.modelo,celulares.problema,celulares.fechaingreso,celulares.dni_cliente,cliente.apellido_cliente,celulares.idtecnico,tecnico.apellido_tecnico,estado.descripcion,celulares.monto,celulares.fechaentrega FROM celulares JOIN cliente ON celulares.dni_cliente=cliente.dni JOIN estado ON celulares.estado=estado.idestado JOIN tecnico ON celulares.idtecnico=tecnico.idtecnico;";

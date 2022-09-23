@@ -14,7 +14,7 @@ public class MostrarTodosClientesMySQL {
         public String mostrarTodosClientes(String asterisco) {
         Statement st = null;
         ResultSet conjuntoResultados = null;
-        String SQL = "SELECT "+asterisco+" FROM cliente";
+        String SQL = "SELECT "+asterisco+" FROM cliente ORDER BY dni ASC";
         try {
         st = Conexion.getConexion().createStatement();
         conjuntoResultados = st.executeQuery(SQL);

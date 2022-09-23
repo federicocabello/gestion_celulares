@@ -14,7 +14,7 @@ public class BuscarTecnicoMySQL {
             public String buscarTecnico(String asterisco) {
             Statement st = null;
             ResultSet conjuntoResultados = null;
-            String SQL = "SELECT "+asterisco+" FROM tecnico";
+            String SQL = "SELECT "+asterisco+" FROM tecnico ORDER BY idtecnico ASC";
             try {
             st = Conexion.getConexion().createStatement();
             conjuntoResultados = st.executeQuery(SQL);
