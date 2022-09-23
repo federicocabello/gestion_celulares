@@ -689,22 +689,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         jTextField1.requestFocus();
         
-/*
-        conexion_consulta.conectar();
-        jComboBox1.removeAllItems();
-        ArrayList<String> lista = new ArrayList<String>();
-        lista = conexion_consulta.llenar_combo();
-        for(int i = 0; i<lista.size();i++){
-            jComboBox1.addItem(lista.get(i));
+        if(jLabel1.isVisible()){
+            conexion_consulta.conectar();
+            jComboBox1.removeAllItems();
+            ArrayList<String> lista = new ArrayList<String>();
+            lista = conexion_consulta.llenar_combo();
+            for(int i = 0; i<lista.size();i++){
+                jComboBox1.addItem(lista.get(i)); 
+            }
+            jComboBox2.removeAllItems();
+            ArrayList<String> lista2 = new ArrayList<String>();
+            lista2 = conexion_consulta.llenar_combo2();
+            for(int i = 0; i<lista2.size();i++){
+                jComboBox2.addItem(lista2.get(i));
+            }
         }
-        conexion_consulta.conectar();
-        jComboBox2.removeAllItems();
-        ArrayList<String> lista2 = new ArrayList<String>();
-        lista2 = conexion_consulta.llenar_combo2();
-        for(int i = 1; i<lista2.size();i++){
-            jComboBox2.addItem(lista2.get(i));
-        }
-*/
                      
     }//GEN-LAST:event_formWindowActivated
 
