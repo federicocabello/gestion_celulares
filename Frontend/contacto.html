@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="estilocontacto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="iconotareadelsistema.png">
+    <title>Gestión de dispositivos | Contacto</title>
+</head>
+<body>
+    <div class="titulocontacto">Formulario de contacto</div>
+    <form action="contacto.php" method="post">
+        <input type="text" name="name" id="name" class="name" placeholder="Nombre...">
+        <input type="number" name="dni" id="dni" class="dni" placeholder="DNI del cliente...">
+        <input type="email" name="mail" id="mail" class="email" placeholder="Correo electrónico...">
+        <input type="number" name="subject" id="subject" class="subject" placeholder="Telefono...">
+        <textarea name="message" id="message" class="message" cols="30" rows="10" placeholder="Escribre tu mensaje..."></textarea>
+        <button type="submit" class="botonc">Enviar</button>
+    </form>
+    <div class="descripcion">Dejanos tu mensaje/sugerencia y nos pondremos en contacto contigo!</div>
+    <br>
+    <footer><a href="index.html">Volver a la página principal</a></footer>
+</body>
+</html>

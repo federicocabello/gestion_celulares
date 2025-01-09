@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type='text/css' href="estiloindex.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="iconotareadelsistema.png">
+    <title>Programa de Federico | Gestión de dispositivos</title>
+</head>
+<style>
+    .logo {
+    margin: 50px 300px;
+    padding: 100px 50px;
+    display: flex;
+    border: 2px solid black;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 35px;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    box-shadow: 5px 5px 5px black;
+    background-image: url(gifdeportada2.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(43, 75, 136);
+    background-size: 50%;
+}
+</style>
+<body onload="foco('codigo')">
+    <!--<div class="logo"><p>LOGO DE LA EMPRESA</p></div>!-->
+    <div class="logo"><!--<img src="gifdeportada.gif" alt="LOGO DE LA EMPRESA">--></div>
+    <div><p class="seg2">Bienvenid@ estimado cliente!</p><p class="seg">Seguimiento de estado del dispositivo:</p>
+    </div><hr><br>
+    <div>
+<form action="conexion.php" method="post">Código de seguimiento:<input type="number" name="codigo" id="codigo" placeholder="Ingrese un número entero...">
+    <input class="boton" type="submit" value="Consultar" onclick="comprobarRegistro()">
+</form>
+    </div>
+<br><br><br>
+<footer><a href="contacto.html">Contacto</a></footer>
+<script>
+    function comprobarRegistro(){
+    let registro;
+    registro=document.getElementById('codigo').value;
+    if(registro<=0){
+        alert('El código de seguimiento ingresado "'+registro+'" NO es válido. Reintente.');
+    };
+    };
+    function foco(variable){
+        document.getElementById(variable).focus();
+    };
+</script>
+</body>
+</html>
